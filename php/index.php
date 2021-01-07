@@ -279,30 +279,79 @@
         </div>
       </div>
     </div>
-      <section class="secsion6">
-        <div>
-          <div>
-            <div><h3>Portfolio</h3></div>
+    <section class="secsion6">
+        <div class = "p1">
+          <div class="p2">
+            <div><H1>Portfolio</H1></div>
+            <div><p>At lorem Ipsum available, but the majority have suffered alteration in some form by injected humour.</p></div>
           </div>
-        <div>
-          <div align ="text-center" class="se">
-            <div class="se1">
-              <div class="se2">
-                <div class="se3">project name</div>
-                 <div class="se4"><i class="fa fa-arrows-alt fa-2x"></i></div>
-              </div>
+          <div class="p3">
+        <div align ="text-center" class="se">
+          <div class="se1">
+            <img src="../img/re1.jpg" alt="">
+            <div class="se2">
+              <div class="se3">project name</div>
+              <div class="se4"><i class="fa fa-arrows-alt fa-2x"></i></div>
             </div>
           </div>
-          <div align ="text-center" class="se">
-            <div class="se1">
-              <div class="se2">
-                <div class="se3">project name</div>
-                <div class="se4"><i class="fa fa-arrows-alt fa-2x"></i></div>
-              </div>
+        </div>
+        <div align ="text-center" class="se">
+          <div class="se1">
+            <img src="../img/re1.jpg" alt="">
+            <div class="se2">
+              <div class="se3">project name</div>
+              <div class="se4"><i class="fa fa-arrows-alt fa-2x"></i></div>
+            </div>
+          </div>
+        </div>
+        <div align ="text-center" class="se">
+          <div class="se1">
+            <img src="../img/re1.jpg" alt="">
+            <div class="se2">
+              <div class="se3">project name</div>
+              <div class="se4"><i class="fa fa-arrows-alt fa-2x"></i></div>
             </div>
           </div>
         </div>
         </div>
+      </div>
+      </section>
+      <section class="secsion7">
+        <div class="c">
+          <div><h1>Let's Keep In Touch!</h1></div>
+          <div><p>Thank you for visiting out my profile. If you would like to get into contact with me, please fill out the form below.</p></div>
+        </div>
+        <div class="c1">
+          <form action="" class="c2">
+            <div class="c3">
+              <div>
+                <label>Name</label> <br>
+                <input type="name" class="form-control" name="email" id="email" placeholder="Enter name" title="Please enter a valid email address"><br>
+              </div>
+              <div>
+                <label>Email</label> <br>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" title="Please enter a valid email address">
+              </div>
+            </div>
+            <div class="c3">
+              <label>Comments</label> <br>
+              <textarea name="comment" class="form-control" id="comments" cols="3" rows="5" placeholder="Enter your message…" title="Please enter your message (at least 10 characters)"></textarea>
+            </div>
+          </form>
+          <div class="">hahahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</div>
+        </div>
+      </section>
+      <section class = "secsion8">
+        <div class ="on">
+          <div class ="on1"><a href=""><p><i class="fa fa-twitter ha"></i></p></a></div>
+          <div class ="on1"><a href=""><p><i class="fa fa-facebook ha"></i></p></a></div>
+          <div class ="on1"><a href=""><p><i class="fa fa-dribbble ha"></i></p></a></div>
+          <div class ="on1"><a href=""><p><i class="fa fa-flickr ha"></i></p></a></div>
+          <div class ='on1'><a href=""><p><i class="fa fa-github ha"></i></p></a></div>
+        </div>
+      </section>
+      <section class= "secsion9">
+        <div><p>Copyright 2020| All Rights Reserved -- Template by phamthanhquan2411@gmail.com</p></div>
       </section>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
