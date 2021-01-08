@@ -1,8 +1,8 @@
-<?php// session_start();?>
+<?php session_start();?>
 <?php
-//if (isset($_SESSION['email']) && $_SESSION['level']==2){
- //   header('location:admin/index.php'); 
-//}
+if (isset($_SESSION['email'])){
+   header('location:index.php'); 
+}
 //elseif(isset($_SESSION['email'])&& $_SESSION['levell']==1){
 //    header('location:member/index.php');
 //}
@@ -41,11 +41,11 @@ include 'ketnoi.php';
         }
         else{
             if($rows['pass'] == ($_POST['pass'])){
-                //$_SESSION['email'] = $rows['email'];
+                $_SESSION['email'] = $rows['email'];
                 //$_SESSION['level'] = $rows['user_level'];
                 //if($_SESSION['level']==2){
-                    echo "dangnhapthanhcong";
-                   //header('location:admin/index.php');
+                
+                    header('location:index.php');
                 }
                 //else{
                 

@@ -34,10 +34,10 @@
                       <a class="nav-link" href="#EXPERIENCE">EXPERIENCE<span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item active">
-                      <a class="nav-link" href="#">PORTFOLIO<span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="#portfolio">PORTFOLIO<span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item active">
-                      <a class="nav-link" href="#">CONTACT<span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="#CONTACT">CONTACT<span class="sr-only">(current)</span></a>
                   </li>
                 </ul>
            </div>
@@ -279,7 +279,7 @@
         </div>
       </div>
     </div>
-    <section class="secsion6">
+    <section id ="portfolio" class="secsion6">
         <div class = "p1">
           <div class="p2">
             <div><H1>Portfolio</H1></div>
@@ -316,7 +316,7 @@
         </div>
       </div>
       </section>
-      <section class="secsion7">
+      <section id ="CONTACT" class="secsion7">
         <div class="c">
           <div><h1>Let's Keep In Touch!</h1></div>
           <div><p>Thank you for visiting out my profile. If you would like to get into contact with me, please fill out the form below.</p></div>

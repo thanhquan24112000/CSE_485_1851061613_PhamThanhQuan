@@ -31,7 +31,6 @@
      <div class="form-group"> 
       <div class="col-md-12"> 
        <button type="submit" class="btn btn-md btn-danger pull-right">Đăng nhập </button><br><br>
- 
       </div> 
      </div> 
     </fieldset> 

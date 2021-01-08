@@ -24,11 +24,8 @@ background-color: white;
     font-weight: 600px;
     color: cornsilk;
 }
-.navbar-brand{
-    padding-left: 5%;
-}
 a:hover{
-    border-bottom: 2px solid #e67e22;
+    border-bottom: 2px solid #290e8d;
 }
 .text-center{
     margin-top: 7%;
