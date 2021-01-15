@@ -12,7 +12,7 @@ if(!isset($_SESSION['email'])){
         <title>logout</title>
     </head>
     <body>
-        <?php header("location:index.php"); ?>
+        <?php header("location:login.php"); ?>
         <?php session_destroy(); ?>
     </body>
     </html>

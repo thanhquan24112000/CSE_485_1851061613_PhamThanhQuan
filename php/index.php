@@ -48,7 +48,7 @@
         <div id="carouselId" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-              <h1 class="hero1">Web Designer </h1>
+              <h1 class="hero1">Web Designer</h1>
                 <p class="hero2">Amazing free responsive website for free, enjoy!!!</p>
             </div>
             <div class="carousel-item">
@@ -286,33 +286,41 @@
             <div><p>At lorem Ipsum available, but the majority have suffered alteration in some form by injected humour.</p></div>
           </div>
           <div class="p3">
+          <!-- -->
+          <?php 
+          require 'ketnoi.php';
+          $sqlii = "SELECT * from duan";
+          $resultii =mysqli_query($conn,$sqlii);
+          if(mysqli_num_rows($resultii) > 0){
+            while ($rowii = mysqli_fetch_assoc($resultii)){
+            ?>
         <div align ="text-center" class="se">
           <div class="se1">
-            <img src="../img/re1.jpg" alt="">
+            <?php echo'<img src="data:anh;base64,'.base64_encode($rowii['anh']).'"alt="Image">'; ?>
             <div class="se2">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn" data-toggle="modal" data-target="#modelId" style= "border : 0px !important; padding:0px !important; margin-left:0px !important;">
               <div class="se3">project name</div>
               <div class="se4"><i class="fa fa-arrows-alt fa-2x"></i></div>
             </div>
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+              <div class="modal-dialog mo" role="document">
+                    <div class="mo1">
+                        <button type="button" class="close mo3" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true" class="mo4">&times;</span>
+                        </button>
+                      <div class = "mo2">
+                      <?php echo'<img class ="cl" src="data:anh;base64,'.base64_encode($rowii['anh']).'"alt="Image">'; ?>
+                      </div>
+                    </div>
+                </div>
+              </div>
           </div>
         </div>
-        <div align ="text-center" class="se">
-          <div class="se1">
-            <img src="../img/re1.jpg" alt="">
-            <div class="se2">
-              <div class="se3">project name</div>
-              <div class="se4"><i class="fa fa-arrows-alt fa-2x"></i></div>
-            </div>
-          </div>
-        </div>
-        <div align ="text-center" class="se">
-          <div class="se1">
-            <img src="../img/re1.jpg" alt="">
-            <div class="se2">
-              <div class="se3">project name</div>
-              <div class="se4"><i class="fa fa-arrows-alt fa-2x"></i></div>
-            </div>
-          </div>
-        </div>
+        <?php }} ?>
         </div>
       </div>
       </section>
@@ -338,7 +346,7 @@
               <textarea name="comment" class="form-control" id="comments" cols="3" rows="5" placeholder="Enter your message…" title="Please enter your message (at least 10 characters)"></textarea>
             </div>
           </form>
-          <div class="">hahahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</div>
+          <div class=""></div>
         </div>
       </section>
       <section class = "secsion8">

@@ -1,4 +1,7 @@
-
+<?php session_start();
+if(!isset($_SESSION['email'])){
+    header('location:login.php');
+}else{?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,19 +16,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
   </head>
-  <body style =" background:#bfbbbb ">
+  <body >
 <?php
 if($_GET['action'] == 'about'){
-    require 'index.php';
+    require 'index2.php';
     require 'ketnoi.php';
     $sql = "SELECT * from motaban";
     $result =mysqli_query($conn,$sql);
 ?>
 
-  <div style =" background:#bfbbbb ;display: flex;flex-direction: column; align-items: center;">
+  <div style =" display: flex;flex-direction: column; align-items: center;">
   <div style = "margin-top : 3%;margin-bottom:3%"><H1>Personal Information Management</H1></div>
-  <div class = "xem" style ="width : 90vw">
-      <table class="table" >
+  <div class = "xem">
+      <table class="table ha" >
           <thead>
               <tr>
                   <th>ID</th>
@@ -51,7 +54,7 @@ if($_GET['action'] == 'about'){
                   <td><?php echo $row['motacongviechientai'] ?></td>
                   <td><?php echo $row['loichungthuc'] ?></td>
                   <td><?php echo $row['nguoichungthuc'] ?></td>
-                  <td><div style = "display: flex; justify-content:space-between; width: 100px ;"><a href="xemtt.php?id=<?php echo $row['mamota'] ?>"><i class="fas fa-eye"></i></a> <a href="#"><i class="fas fa-wrench"></i></a> <a href="xoa.php?id=<?php echo $row['mamota'];?>" onclick = "return confirm('Are you sure want to delete?');"><i class="fas fa-trash-alt"></i></a></div></td>
+                  <td><div style = "display: flex; justify-content:space-between; width: 100px ;"><a href="xem.php?id=<?php echo $row['mamota'] ?>"><i class="fas fa-eye"></i></a> <a href="update.php?id=<?php echo $row['mamota'] ?>"><i class="fas fa-wrench"></i></a> <a href="delete.php?id=<?php echo $row['mamota'];?>" onclick = "return confirm('Are you sure want to delete?');"><i class="fas fa-trash-alt"></i></a></div></td>
               </tr>
               <?php } 
             } ?>
@@ -60,16 +63,17 @@ if($_GET['action'] == 'about'){
       </div>
     </div>
 <?php
+require 'index3.php';
 }
 elseif($_GET['action'] == 'project'){
-    require 'index.php';
+    require 'index2.php';
     require 'ketnoi.php';
     $sql = "SELECT * from duan";
     $result =mysqli_query($conn,$sql);?>
-    <div style =" background:#bfbbbb ;display: flex;flex-direction: column; align-items: center;">
+    <div style ="display: flex;flex-direction: column; align-items: center;">
     <div style = "margin-top : 3%;margin-bottom:3%"><H1>Project</H1></div>
-    <div class = "xem" style ="width : 90vw">
-        <table class="table" >
+    <div class = "xem">
+        <table class="table ha" >
             <thead>
                 <tr>
                     <th>ID</th>
@@ -85,9 +89,9 @@ elseif($_GET['action'] == 'project'){
                 <tr>
                     <td scope="row"><?php echo $row['maduan'] ?></td>
                     <td><?php echo $row['tenduan'] ?></td>
-                    <td style = "min-width:200px !important"><?php echo $row['anh'] ?></td>
+                    <td ><?php echo'<img style = "width:7em; height : 7em;" src="data:anh;base64,'.base64_encode($row['anh']).'"alt="Image">'; ?></td>
                     <td><?php echo $row['mota'] ?></td>
-                    <td><div style = "display: flex; justify-content:space-between; width: 100px ;"><a href="xemtt.php?id=<?php echo $row['mamota'] ?>"><i class="fas fa-eye"></i></a> <a href="#"><i class="fas fa-wrench"></i></a> <a href="xoa.php?id=<?php echo $row['mamota'];?>" onclick = "return confirm('Are you sure want to delete?');"><i class="fas fa-trash-alt"></i></a></div></td>
+                    <td><div style = "display: flex; justify-content:space-between; width: 100px ;"><a href="xem.php?id1=<?php echo $row['maduan'] ?>"><i class="fas fa-eye"></i></a> <a href="update.php?id1=<?php echo $row['maduan'] ?>"><i class="fas fa-wrench"></i></a> <a href="delete.php?id1=<?php echo $row['maduan'];?>" onclick = "return confirm('Are you sure want to delete?');"><i class="fas fa-trash-alt"></i></a></div></td>
                 </tr>
                 <?php } 
               } ?>
@@ -96,16 +100,17 @@ elseif($_GET['action'] == 'project'){
         </div>
       </div>
   <?php
+  require 'index3.php';
 }
 elseif($_GET['action'] == 'experience'){
-    require 'index.php';
+    require 'index2.php';
     require 'ketnoi.php';
     $sql = "SELECT * from kinhnghiem";
     $result =mysqli_query($conn,$sql); ?>
-      <div style =" background:#bfbbbb ;display: flex;flex-direction: column; align-items: center;">
+      <div style ="display: flex;flex-direction: column; align-items: center;">
   <div style = "margin-top : 3%;margin-bottom:3%"><H1>Experience Management</H1></div>
-  <div class = "xem" style ="width : 90vw">
-      <table class="table" >
+  <div class = "xem">
+      <table class="table ha" >
           <thead>
               <tr>
                   <th>ID</th>
@@ -127,7 +132,7 @@ elseif($_GET['action'] == 'experience'){
                   <td><?php echo $row['thoigianketthuc'] ?></td>
                   <td><?php echo $row['chucvu'] ?></td>
                   <td><?php echo $row['motakinhnghiem'] ?></td>
-                  <td><div style = "display: flex; justify-content:space-between; width: 100px ;"><a href="xemtt.php?id=<?php echo $row['mamota'] ?>"><i class="fas fa-eye"></i></a> <a href="#"><i class="fas fa-wrench"></i></a> <a href="xoa.php?id=<?php echo $row['mamota'];?>" onclick = "return confirm('Are you sure want to delete?');"><i class="fas fa-trash-alt"></i></a></div></td>
+                  <td><div style = "display: flex; justify-content:space-between; width: 100px ;"><a href="xem.php?id2=<?php echo $row['makinhnghiem'] ?>"><i class="fas fa-eye"></i></a> <a href="update.php?id2=<?php echo $row['makinhnghiem'] ?>"><i class="fas fa-wrench"></i></a> <a href="delete.php?id2=<?php echo $row['makinhnghiem'];?>" onclick = "return confirm('Are you sure want to delete?');"><i class="fas fa-trash-alt"></i></a></div></td>
               </tr>
               <?php } 
             } ?>
@@ -136,16 +141,17 @@ elseif($_GET['action'] == 'experience'){
       </div>
     </div>
 <?php
+require 'index3.php';
 }
 elseif($_GET['action'] == 'education'){
-    require 'index.php';
+    require 'index2.php';
     require 'ketnoi.php';
     $sql = "SELECT * from hoctap";
     $result =mysqli_query($conn,$sql);?>
-      <div style =" background:#bfbbbb ;display: flex;flex-direction: column; align-items: center;">
+      <div style ="display: flex;flex-direction: column; align-items: center;">
   <div style = "margin-top : 3%;margin-bottom:3%"><H1>Education</H1></div>
-  <div class = "xem" style ="width : 90vw">
-      <table class="table" >
+  <div class = "xem">
+      <table class="table ha" >
           <thead>
               <tr>
                   <th>ID</th>
@@ -169,7 +175,7 @@ elseif($_GET['action'] == 'education'){
                   <td><?php echo $row['thoigianbatdau'] ?></td>
                   <td><?php echo $row['thoigianketthuc'] ?></td>
                   <td><?php echo $row['mota'] ?></td>
-                  <td><div style = "display: flex; justify-content:space-between; width: 100px ;"><a href="xemtt.php?id=<?php echo $row['mamota'] ?>"><i class="fas fa-eye"></i></a> <a href="#"><i class="fas fa-wrench"></i></a> <a href="xoa.php?id=<?php echo $row['mamota'];?>" onclick = "return confirm('Are you sure want to delete?');"><i class="fas fa-trash-alt"></i></a></div></td>
+                  <td><div style = "display: flex; justify-content:space-between; width: 100px ;"><a href="xem.php?id8=<?php echo $row['mahoctap'] ?>"><i class="fas fa-eye"></i></a> <a href="update.php?id8=<?php echo $row['mahoctap'] ?>"><i class="fas fa-wrench"></i></a> <a href="delete.php?id3=<?php echo $row['mahoctap'];?>" onclick = "return confirm('Are you sure want to delete?');"><i class="fas fa-trash-alt"></i></a></div></td>
               </tr>
               <?php } 
             } ?>
@@ -178,16 +184,17 @@ elseif($_GET['action'] == 'education'){
       </div>
     </div>
 <?php
+require 'index3.php';
 }
 elseif($_GET['action'] == 'contact'){
-    require 'index.php';
+    require 'index2.php';
     require 'ketnoi.php';
     $sql = "SELECT * from lienhe";
     $result =mysqli_query($conn,$sql);?>
-      <div style =" background:#bfbbbb ;display: flex;flex-direction: column; align-items: center;">
+      <div style ="display: flex;flex-direction: column; align-items: center;">
   <div style = "margin-top : 3%;margin-bottom:3%"><H1>Comment Management</H1></div>
-  <div class = "xem" style ="width : 90vw">
-      <table class="table" >
+  <div class = "xem">
+      <table class="table ha" >
           <thead>
               <tr>
                   <th>ID</th>
@@ -205,7 +212,7 @@ elseif($_GET['action'] == 'contact'){
                   <td><?php echo $row['ten'] ?></td>
                   <td style = "min-width:200px !important"><?php echo $row['email'] ?></td>
                   <td><?php echo $row['noidung'] ?></td>
-                  <td><div style = "display: flex; justify-content:space-between; width: 100px ;"><a href="xemtt.php?id=<?php echo $row['mamota'] ?>"><i class="fas fa-eye"></i></a> <a href="#"><i class="fas fa-wrench"></i></a> <a href="xoa.php?id=<?php echo $row['mamota'];?>" onclick = "return confirm('Are you sure want to delete?');"><i class="fas fa-trash-alt"></i></a></div></td>
+                  <td><div style = "display: flex; justify-content:space-between; width: 100px ;"><a href="xem.php?id4=<?php echo $row['manguoidung'] ?>"><i class="fas fa-eye"></i></a> <a href="update.php?id4=<?php echo $row['manguoidung'] ?>"><i class="fas fa-wrench"></i></a> <a href="delete.php?id4=<?php echo $row['manguoidung'];?>" onclick = "return confirm('Are you sure want to delete?');"><i class="fas fa-trash-alt"></i></a></div></td>
               </tr>
               <?php } 
             } ?>
@@ -214,16 +221,17 @@ elseif($_GET['action'] == 'contact'){
       </div>
     </div>
 <?php
+require 'index3.php';
 }
 elseif($_GET['action'] == 'language'){
-    require 'index.php';
+    require 'index2.php';
     require 'ketnoi.php';
     $sql = "SELECT * from ngonngu";
     $result =mysqli_query($conn,$sql); ?>
-      <div style =" background:#bfbbbb ;display: flex;flex-direction: column; align-items: center;">
+      <div style ="display: flex;flex-direction: column; align-items: center;">
   <div style = "margin-top : 3%;margin-bottom:3%"><H1>Programming language</H1></div>
-  <div class = "xem" style ="width : 90vw">
-      <table class="table" >
+  <div class = "xem">
+      <table class="table ha" >
           <thead>
               <tr>
                   <th>ID</th>
@@ -239,7 +247,7 @@ elseif($_GET['action'] == 'language'){
                   <td scope="row"><?php echo $row['mangonngu'] ?></td>
                   <td><?php echo $row['tenngonngu'] ?></td>
                   <td style = "min-width:200px !important"><?php echo $row['%hoanthanh'] ?></td>
-                  <td><div style = "display: flex; justify-content:space-between; width: 100px ;"><a href="xemtt.php?id=<?php echo $row['mamota'] ?>"><i class="fas fa-eye"></i></a> <a href="#"><i class="fas fa-wrench"></i></a> <a href="xoa.php?id=<?php echo $row['mamota'];?>" onclick = "return confirm('Are you sure want to delete?');"><i class="fas fa-trash-alt"></i></a></div></td>
+                  <td><div style = "display: flex; justify-content:space-between; width: 100px ;"><a href="xem.php?id5=<?php echo $row['mangonngu'] ?>"><i class="fas fa-eye"></i></a> <a href="update.php?id5=<?php echo $row['mangonngu'] ?>"><i class="fas fa-wrench"></i></a> <a href="delete.php?id5=<?php echo $row['mangonngu'];?>" onclick = "return confirm('Are you sure want to delete?');"><i class="fas fa-trash-alt"></i></a></div></td>
               </tr>
               <?php } 
             } ?>
@@ -248,16 +256,17 @@ elseif($_GET['action'] == 'language'){
       </div>
     </div>
 <?php
+require 'index3.php';
 }
 elseif($_GET['action'] == 'skill'){
-    require 'index.php';
+    require 'index2.php';
     require 'ketnoi.php';
     $sql = "SELECT * from kynang";
     $result =mysqli_query($conn,$sql);?>
-      <div style =" background:#bfbbbb ;display: flex;flex-direction: column; align-items: center;">
+      <div style ="display: flex;flex-direction: column; align-items: center;">
   <div style = "margin-top : 3%;margin-bottom:3%"><H1>My Skill</H1></div>
-  <div class = "xem" style ="width : 90vw">
-      <table class="table" >
+  <div class = "xem">
+      <table class="table ha" >
           <thead>
               <tr>
                   <th>ID</th>
@@ -273,7 +282,7 @@ elseif($_GET['action'] == 'skill'){
                   <td scope="row"><?php echo $row['makynang'] ?></td>
                   <td><?php echo $row['tenkynang'] ?></td>
                   <td style = "min-width:200px !important"><?php echo $row['motakynang'] ?></td>
-                  <td><div style = "display: flex; justify-content:space-between; width: 100px ;"><a href="xemtt.php?id=<?php echo $row['mamota'] ?>"><i class="fas fa-eye"></i></a> <a href="#"><i class="fas fa-wrench"></i></a> <a href="xoa.php?id=<?php echo $row['mamota'];?>" onclick = "return confirm('Are you sure want to delete?');"><i class="fas fa-trash-alt"></i></a></div></td>
+                  <td><div style = "display: flex; justify-content:space-between; width: 100px ;"><a href="xem.php?id6=<?php echo $row['makynang'] ?>"><i class="fas fa-eye"></i></a> <a href="update.php?id6=<?php echo $row['makynang'] ?>"><i class="fas fa-wrench"></i></a> <a href="delete.php?id6=<?php echo $row['makynang'];?>" onclick = "return confirm('Are you sure want to delete?');"><i class="fas fa-trash-alt"></i></a></div></td>
               </tr>
               <?php } 
             } ?>
@@ -282,16 +291,17 @@ elseif($_GET['action'] == 'skill'){
       </div>
     </div>
 <?php
+require 'index3.php';
 }
 else{
-    require 'index.php';
+    require 'index2.php';
     require 'ketnoi.php';
     $sql = "SELECT * from nguoigioithieu";
     $result =mysqli_query($conn,$sql);?>
-      <div style =" background:#bfbbbb ;display: flex;flex-direction: column; align-items: center;">
+      <div style ="display: flex;flex-direction: column; align-items: center;">
   <div style = "margin-top : 3%;margin-bottom:3%"><H1>Presenter</H1></div>
-  <div class = "xem" style ="width : 90vw">
-      <table class="table" >
+  <div class = "xem">
+      <table class="table ha" >
           <thead>
               <tr>
                   <th>ID</th>
@@ -311,7 +321,7 @@ else{
                   <td style = "min-width:200px !important"><?php echo $row['anh'] ?></td>
                   <td><?php echo $row['chucvu'] ?></td>
                   <td><?php echo $row['mota'] ?></td>
-                  <td><div style = "display: flex; justify-content:space-between; width: 100px ;"><a href="xemtt.php?id=<?php echo $row['mamota'] ?>"><i class="fas fa-eye"></i></a> <a href="#"><i class="fas fa-wrench"></i></a> <a href="xoa.php?id=<?php echo $row['mamota'];?>" onclick = "return confirm('Are you sure want to delete?');"><i class="fas fa-trash-alt"></i></a></div></td>
+                  <td><div style = "display: flex; justify-content:space-between; width: 100px ;"><a href="xem.php?id7=<?php echo $row['manguoigioithieu'] ?>"><i class="fas fa-eye"></i></a> <a href="update.php?id7=<?php echo $row['manguoigioithieu'] ?>"><i class="fas fa-wrench"></i></a> <a href="delete.php?id7=<?php echo $row['manguoigioithieu'];?>" onclick = "return confirm('Are you sure want to delete?');"><i class="fas fa-trash-alt"></i></a></div></td>
               </tr>
               <?php } 
             } ?>
@@ -320,6 +330,7 @@ else{
       </div>
     </div>
 <?php
+require 'index3.php';
 }
  ?> 
  <!-- Optional JavaScript -->
@@ -329,3 +340,4 @@ else{
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
+<?php } ?>

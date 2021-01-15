@@ -45,7 +45,7 @@ include 'ketnoi.php';
                 //$_SESSION['level'] = $rows['user_level'];
                 //if($_SESSION['level']==2){
                 
-                    header('location:index.php');
+                   header('location:index1.php');
                 }
                 //else{
                 
