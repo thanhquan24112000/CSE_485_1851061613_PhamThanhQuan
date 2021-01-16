@@ -320,7 +320,7 @@ elseif(isset($_GET['id4'])){
        </div>
     </div>
     <div class="form-group">
-       <label class="control-label col-sm-2" for="email">School :</label>
+       <label class="control-label col-sm-2" for="email">Commetnt :</label>
        <div class="col-sm-10">
           <input type="text" class="form-control" id="email" value="<?php echo $row['noidung'] ?>" name="noidung">
        </div>
@@ -443,7 +443,8 @@ elseif(isset($_GET['id6'])){
 else{
     require 'ketnoi.php';
     if($_GET['id7'] == 'id7' ){
-      $sqli = "UPDATE nguoigioithieu set ten ='".$_POST['ten']."',anh ='".$_POST['anh']."',chucvu ='".$_POST['chucvu']."',mota ='".$_POST['mota']."' where manguoigioithieu = '".$_POST['ma']."' " ;
+      $a = addslashes(file_get_contents($_FILES['anh']['tmp_name']));
+      $sqli = "UPDATE nguoigioithieu set ten ='".$_POST['ten']."',anh ='".$a."',chucvu ='".$_POST['chucvu']."',mota ='".$_POST['mota']."' where manguoigioithieu = '".$_POST['ma']."' " ;
       $resulti = mysqli_query($conn,$sqli);
       if(!$resulti){
         die('loi'.mysqli_error($resulti));
@@ -459,7 +460,7 @@ else{
     ?>
   <div class="container">
   <h2>Update</h2>
-  <form class="form-horizontal" action="update.php?id7=id7" method= "post" autocomplete = "off">
+  <form class="form-horizontal" action="update.php?id7=id7" method= "post" enctype ="multipart/form-data"> autocomplete = "off">
     <div class="form-group">
        <label class="control-label col-sm-2" for="email">ID :</label>
        <div class="col-sm-10">
@@ -475,7 +476,8 @@ else{
     <div class="form-group">
        <label class="control-label col-sm-2" for="email">Avatar :</label>
        <div class="col-sm-10">
-          <input type="text" class="form-control" id="email" value="<?php echo $row['anh'] ?>" name="anh">
+       <?php echo'<img style = "width:7em; height : 7em;" src="data:anh;base64,'.base64_encode($row['anh']).'"alt="Image">'; ?>
+       <input type="file" name="anh">
        </div>
     </div>
     <div class="form-group">

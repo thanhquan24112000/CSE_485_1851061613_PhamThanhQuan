@@ -60,6 +60,7 @@ if($_GET['action'] == 'about'){
             } ?>
           </tbody>
       </table>
+      <button><a href="insert.php?action0=motaban">them</a></button>
       </div>
     </div>
 <?php
@@ -97,6 +98,7 @@ elseif($_GET['action'] == 'project'){
               } ?>
             </tbody>
         </table>
+        <button><a href="insert.php?action1=duan">them</a></button>
         </div>
       </div>
   <?php
@@ -138,6 +140,7 @@ elseif($_GET['action'] == 'experience'){
             } ?>
           </tbody>
       </table>
+      <button><a href="insert.php?action2=kinhnghiem">them</a></button>
       </div>
     </div>
 <?php
@@ -181,6 +184,7 @@ elseif($_GET['action'] == 'education'){
             } ?>
           </tbody>
       </table>
+      <button><a href="insert.php?action3=hoctap">them</a></button>
       </div>
     </div>
 <?php
@@ -218,6 +222,7 @@ elseif($_GET['action'] == 'contact'){
             } ?>
           </tbody>
       </table>
+      <button><a href="insert.php?action4=lienhe">them</a></button>
       </div>
     </div>
 <?php
@@ -253,6 +258,7 @@ elseif($_GET['action'] == 'language'){
             } ?>
           </tbody>
       </table>
+      <button><a href="insert.php?action5=ngonngu">them</a></button>
       </div>
     </div>
 <?php
@@ -288,6 +294,7 @@ elseif($_GET['action'] == 'skill'){
             } ?>
           </tbody>
       </table>
+      <button><a href="insert.php?action6=skill">them</a></button>
       </div>
     </div>
 <?php
@@ -318,7 +325,7 @@ else{
               <tr>
                   <td scope="row"><?php echo $row['manguoigioithieu'] ?></td>
                   <td><?php echo $row['ten'] ?></td>
-                  <td style = "min-width:200px !important"><?php echo $row['anh'] ?></td>
+                  <td style = "min-width:200px !important"><?php echo'<img style = "width:7em; height : 7em;" src="data:anh;base64,'.base64_encode($row['anh']).'"alt="Image">'; ?></td>
                   <td><?php echo $row['chucvu'] ?></td>
                   <td><?php echo $row['mota'] ?></td>
                   <td><div style = "display: flex; justify-content:space-between; width: 100px ;"><a href="xem.php?id7=<?php echo $row['manguoigioithieu'] ?>"><i class="fas fa-eye"></i></a> <a href="update.php?id7=<?php echo $row['manguoigioithieu'] ?>"><i class="fas fa-wrench"></i></a> <a href="delete.php?id7=<?php echo $row['manguoigioithieu'];?>" onclick = "return confirm('Are you sure want to delete?');"><i class="fas fa-trash-alt"></i></a></div></td>
@@ -327,6 +334,7 @@ else{
             } ?>
           </tbody>
       </table>
+      <button><a href="insert.php?action7=nguoigioithieu">them</a></button>
       </div>
     </div>
 <?php

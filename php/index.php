@@ -264,7 +264,7 @@
               <div class="carousel-item">
                 <div class="re2">
                   <div class="re3">
-                    <img class="hahaa" src="<?php echo $rowi['anh'] ?>" alt="First slide">
+                  <?php echo'<img class="hahaa"src="data:anh;base64,'.base64_encode($rowi['anh']).'">'; ?>
                     <h3><?php echo $rowi['ten'] ?></h3>
                     <p><?php echo $rowi['chucvu'] ?></p> 
                   </div>
@@ -288,6 +288,8 @@
           <div class="p3">
           <!-- -->
           <?php 
+          $a = 0;
+          $b = 0;
           require 'ketnoi.php';
           $sqlii = "SELECT * from duan";
           $resultii =mysqli_query($conn,$sqlii);
@@ -299,14 +301,13 @@
             <?php echo'<img src="data:anh;base64,'.base64_encode($rowii['anh']).'"alt="Image">'; ?>
             <div class="se2">
             <!-- Button trigger modal -->
-            <button type="button" class="btn" data-toggle="modal" data-target="#modelId" style= "border : 0px !important; padding:0px !important; margin-left:0px !important;">
+            <button type="button" class="btn" data-toggle="modal" data-target="#modelId<?php echo $a++; ?>" style= "border : 0px !important; padding:0px !important; margin-left:0px !important;">
               <div class="se3">project name</div>
               <div class="se4"><i class="fa fa-arrows-alt fa-2x"></i></div>
-            </div>
             </button>
-            
+            </div>
             <!-- Modal -->
-            <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal fade" id="modelId<?php echo $b++; ?>" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
               <div class="modal-dialog mo" role="document">
                     <div class="mo1">
                         <button type="button" class="close mo3" data-dismiss="modal" aria-label="Close">
@@ -320,7 +321,8 @@
               </div>
           </div>
         </div>
-        <?php }} ?>
+        <?php }
+      } ?>
         </div>
       </div>
       </section>
