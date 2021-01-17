@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -241,12 +242,19 @@
               <li data-target="#carouselId" data-slide-to="1"></li>
               <li data-target="#carouselId" data-slide-to="2"></li>
             </ol>
+            <?php require 'ketnoi.php';
+            $ssql = "SELECT * from user";
+            $results = mysqli_query($conn,$ssql);
+            $ro = $results->fetch_assoc();
+            mysqli_close($conn);
+             ?>
             <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
                 <div class="re2">
                   <div class="re3">
-                    <img class="hahah" src="../img/re1.jpg" alt="First slide">
-                    <h3>Alexander</h3>
+                  <?php echo'<img class="hahah"src="data:avatar;base64,'.base64_encode($ro['avatar']).'">'; ?>
+                    
+                    <h3><?php echo $ro['name'] ?></h3>
                     <p>CEO / WEBOTE</p>
                   </div>
                   <div class="re4">
@@ -331,35 +339,58 @@
           <div><h1>Let's Keep In Touch!</h1></div>
           <div><p>Thank you for visiting out my profile. If you would like to get into contact with me, please fill out the form below.</p></div>
         </div>
+        <?php
+       if(isset($_POST['submit']))
+         {
+           require 'ketnoi.php';
+           $sql = "INSERT INTO lienhe values(null,'".$_POST['name']."','".$_POST['email']."','".$_POST['comment']."')";
+           $result = mysqli_query($conn,$sql);
+        }
+      ?>
         <div class="c1">
-          <form action="" class="c2">
+          <form action="index.php" class="c2" method="POST">
             <div class="c3">
               <div>
                 <label>Name</label> <br>
-                <input type="name" class="form-control" name="email" id="email" placeholder="Enter name" title="Please enter a valid email address"><br>
+                <input required="" type="name" class="form-control" name="name" placeholder="Enter name" title="Please enter a valid email address"><br>
               </div>
               <div>
                 <label>Email</label> <br>
-                <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" title="Please enter a valid email address">
+                <input required="" type="email" class="form-control" name="email" id="email" placeholder="Enter email" title="Please enter a valid email address">
+              <div class="sb" style = "margin-top:2em;"><input name = "submit" type="submit" value = "submit"></div>
               </div>
             </div>
             <div class="c3">
               <label>Comments</label> <br>
-              <textarea name="comment" class="form-control" id="comments" cols="3" rows="5" placeholder="Enter your message…" title="Please enter your message (at least 10 characters)"></textarea>
+              <textarea required="" name="comment" class="form-control" id="comments" cols="3" rows="5" placeholder="Enter your message…" title="Please enter your message (at least 10 characters)"></textarea>
             </div>
           </form>
-          <div class=""></div>
+          <div class = "ct">
+          <?php require 'ketnoi.php';
+            $sqql = "SELECT * from user";
+            $resultq = mysqli_query ($conn,$sqql);
+            $rowq = $resultq->fetch_assoc();
+            mysqli_close($conn);
+           ?>
+          <h5>Address :</h5>
+          <label><?php echo $rowq['address'];?></label>
+          <h5>Phone :</h5>
+          <label><?php echo $rowq['phone'];?></label>
+          <h5>Email :</h5>
+          <label><?php echo $rowq['email'];?></label>
         </div>
+        </div>
+        
       </section>
       <section class = "secsion8">
         <div class ="on">
-          <div class ="on1"><a href=""><p><i class="fa fa-twitter ha"></i></p></a></div>
-          <div class ="on1"><a href=""><p><i class="fa fa-facebook ha"></i></p></a></div>
-          <div class ="on1"><a href=""><p><i class="fa fa-dribbble ha"></i></p></a></div>
-          <div class ="on1"><a href=""><p><i class="fa fa-flickr ha"></i></p></a></div>
-          <div class ='on1'><a href=""><p><i class="fa fa-github ha"></i></p></a></div>
+          <div class ="on1"><a href="<?php echo $rowq['link twitter'] ?>"><p><i class="fa fa-twitter ha"></i></p></a></div>
+          <div class ="on1"><a href="<?php echo $rowq['linkface'] ?>"><p><i class="fa fa-facebook ha"></i></p></a></div>
+          <div class ="on1"><a href="<?php echo $rowq['link dribbble'] ?>"><p><i class="fa fa-dribbble ha"></i></p></a></div>
+          <div class ="on1"><a href="<?php echo $rowq['link flickr'] ?>"><p><i class="fa fa-flickr ha"></i></p></a></div>
+          <div class ='on1'><a href="<?php echo $rowq['link github'] ?>"><p><i class="fa fa-github ha"></i></p></a></div>
         </div>
-      </section>
+      </section> 
       <section class= "secsion9">
         <div><p>Copyright 2020| All Rights Reserved -- Template by phamthanhquan2411@gmail.com</p></div>
       </section>

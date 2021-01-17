@@ -2,3 +2,34 @@
     width: 65em;
     background:rgb(240, 235, 235);
 }
+.haaa{
+    margin-left: 87%;
+}
+.haaa button{
+    background-color: #4e73df;
+    border: #4e73df ;
+}
+.haaa button a{
+    color: black;
+}
+.haha{
+    margin-left: 82%;
+}
+.hi{
+    width: 2em;
+    height: 2em;
+    border:1px solid black;
+    margin: 2px;
+}
+.hi h6{
+    text-align: center;
+    margin-top: 3px;
+    font-size: 1.2em;
+}
+.hi .i {
+    background: black;
+}
+.hi h4{
+    text-align: center;
+    margin-top: 1px;
+}

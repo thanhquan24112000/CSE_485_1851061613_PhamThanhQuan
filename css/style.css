@@ -370,6 +370,9 @@ background: rgb(228, 221, 221);
 .c3{
     width: 35%;
 }
+.ct {
+    width: 30%;
+}
 .secsion8{
     background: white;
 }
@@ -390,10 +393,10 @@ background: rgb(228, 221, 221);
 }
 .on .on1 p i {
     font-size: 2em;
-    color: rgb(228, 221, 221);
+    color: rgb(5, 0, 0);
 }
 .on1 :hover{
-    color: #080808 !important;
+    color: #d6850c !important;
 }
 .secsion9 p{
     text-align: center;

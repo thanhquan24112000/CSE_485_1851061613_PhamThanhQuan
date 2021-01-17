@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-      
-
 <?php
 require 'ketnoi.php';
 if(isset($_GET['action0'])){
@@ -29,27 +27,27 @@ if(isset($_GET['action0'])){
   <h2>INSERT PROJECT</h2>
   <form class="form-horizontal" action="insert.php?action1=id1" method= "post" enctype ="multipart/form-data">
     <div class="form-group">
-       <label class="control-label col-sm-2" for="email">ID :</label>
+       <label class="control-label col-sm-2" for="email">ID:</label>
        <div class="col-sm-10">
-          <input readonly type="text" class="form-control" id="email" name="maduan">
+          <input readonly type="text" class="form-control" id="email" name="maduan" >
        </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Name Project:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="email"  name="tenduan">
+        <input type="text" class="form-control" id="email"  name="tenduan" required="">
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Image:</label>
       <div class="col-sm-10">
-       <input type="file" name= "anhproject" >
+       <input type="file" name= "anhproject" required="">
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Description:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="email"  name="mota">
+        <input type="text" class="form-control" id="email"  name="mota" required="">
       </div>
     </div>
     </div>
@@ -82,32 +80,32 @@ else{
   <div class="form-group">
     <label class="control-label col-sm-2" for="email">Skill:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="email" name="tenkinhnghiem">
+      <input type="text" class="form-control" id="email" name="tenkinhnghiem" required="">
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-sm-2" for="email">First Time:</label>
     <div class="col-sm-10">
-      <input type="date" class="form-control" id="email"  name="thoigianbatdau">
+      <input type="date" class="form-control" id="email"  name="thoigianbatdau" required="">
       
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-sm-2" for="email">Last Time	:</label>
     <div class="col-sm-10">
-      <input type="date" class="form-control" id="email"   name="thoigianketthuc">
+      <input type="date" class="form-control" id="email"   name="thoigianketthuc" required="">
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-sm-2" for="email">Position	:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="email"   name="chucvu">
+      <input type="text" class="form-control" id="email"   name="chucvu" required="">
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-sm-2" for="email">Description:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="email"  name="motakinhnghiem">
+      <input type="text" class="form-control" id="email"  name="motakinhnghiem" required="">
     </div>
   </div>
   </div>
@@ -233,7 +231,6 @@ elseif(isset($_GET['action4'])){
 <?php
   }
 }
-
 elseif(isset($_GET['action6'])){
   require 'ketnoi.php';
   if($_GET['action6'] == 'id6' ){

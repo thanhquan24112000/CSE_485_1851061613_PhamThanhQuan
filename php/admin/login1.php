@@ -35,10 +35,6 @@ include 'ketnoi.php';
 <?php
           include 'login.php';
         }
-        elseif($rows['status'] != 1){
-            echo '<H3 style ="text-align : center">Tài khoản chưa được kích hoạt !</H3>';
-            require 'login.php';
-        }
         else{
             if($rows['pass'] == ($_POST['pass'])){
                 $_SESSION['email'] = $rows['email'];
