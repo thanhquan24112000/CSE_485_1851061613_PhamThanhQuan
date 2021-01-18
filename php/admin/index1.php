@@ -63,7 +63,7 @@ if(!isset($_SESSION['email'])){
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="manage.php?action=project">
-                    <i class="fas fa-fw fa-wrench"></i>
+                <i class="fas fa-calendar fa-2x"></i>
                     <span>Project</span></a>
             </li>
             <li class="nav-item">
@@ -73,27 +73,27 @@ if(!isset($_SESSION['email'])){
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="manage.php?action=education">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fas fa-school"></i>
                     <span>Education</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="manage.php?action=contact">
-                    <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-id-card-alt"></i>
                     <span>Contact</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="manage.php?action=language">
-                    <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-book"></i>
                     <span>Programming Language</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="manage.php?action=experience">
-                    <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-book-open"></i>
                     <span>Experience </span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="manage.php?action=references">
-                    <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-user-friends"></i>
                     <span>Presenter</span></a>
             </li>
             <!-- Divider -->

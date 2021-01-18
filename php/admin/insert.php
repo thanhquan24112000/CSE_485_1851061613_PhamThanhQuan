@@ -138,44 +138,44 @@ elseif(isset($_GET['action3'])){
 <div class="form-group">
    <label class="control-label col-sm-2" for="email">Degree :</label>
    <div class="col-sm-10">
-      <input type="text" class="form-control" id="email" name="1">
+      <input required="" type="text" class="form-control" id="email" name="1">
    </div>
 </div>
 <div class="form-group">
    <label class="control-label col-sm-2" for="email">Describe Degree :</label>
    <div class="col-sm-10">
-      <input type="text" class="form-control" id="email" name="2">
+      <input required="" type="text" class="form-control" id="email" name="2">
    </div>
 </div>
 <div class="form-group">
    <label class="control-label col-sm-2" for="email">School :</label>
    <div class="col-sm-10">
-      <input type="text" class="form-control" id="email" name="3">
+      <input required="" type="text" class="form-control" id="email" name="3">
    </div>
 </div>
 <div class="form-group">
   <label class="control-label col-sm-2" for="email">First Time:</label>
   <div class="col-sm-10">
-    <input type="date" class="form-control" id="email" name="4">
+    <input required="" type="date" class="form-control" id="email" name="4">
     
   </div>
 </div>
 <div class="form-group">
   <label class="control-label col-sm-2" for="email">Last Time	:</label>
   <div class="col-sm-10">
-    <input type="date" class="form-control" id="email" name="5">
+    <input required="" type="date" class="form-control" id="email" name="5">
   </div>
 </div>
 <div class="form-group">
   <label class="control-label col-sm-2" for="email">Describe :</label>
   <div class="col-sm-10">
-    <input type="text" class="form-control" id="email" name="6">
+    <input required="" type="text" class="form-control" id="email" name="6">
   </div>
 </div>
 </div>
 <div class="form-group">        
   <div class="col-sm-offset-2 col-sm-10" >
-    <button type="submit" class="btn btn-default" style = "background : #007bff">Submit</button>
+    <button required="" type="submit" class="btn btn-default" style = "background : #007bff">Submit</button>
   </div>
 </div>
 </form>
@@ -205,19 +205,19 @@ elseif(isset($_GET['action4'])){
   <div class="form-group">
      <label class="control-label col-sm-2" for="email">Email :</label>
      <div class="col-sm-10">
-        <input type="text" class="form-control" id="email" name="email">
+        <input required="" type="text" class="form-control" id="email" name="email">
      </div>
   </div>
   <div class="form-group">
      <label class="control-label col-sm-2" for="email">Name :</label>
      <div class="col-sm-10">
-        <input type="text" class="form-control" id="email" name="ten">
+        <input required="" type="text" class="form-control" id="email" name="ten">
      </div>
   </div>
   <div class="form-group">
      <label class="control-label col-sm-2" for="email">Comment :</label>
      <div class="col-sm-10">
-        <input type="text" class="form-control" id="email" name="noidung">
+        <input required="" type="text" class="form-control" id="email" name="noidung">
      </div>
   </div>
   </div>
@@ -255,19 +255,19 @@ elseif(isset($_GET['action6'])){
   <div class="form-group">
      <label class="control-label col-sm-2" for="email">Name :</label>
      <div class="col-sm-10">
-        <input type="text" class="form-control" id="email" name="tenkynang">
+        <input required="" type="text" class="form-control" id="email" name="tenkynang">
      </div>
   </div>
   <div class="form-group">
      <label class="control-label col-sm-2" for="email">Describe Skill :</label>
      <div class="col-sm-10">
-        <input type="text" class="form-control" id="email" name="motakynang">
+        <input required="" type="text" class="form-control" id="email" name="motakynang">
      </div>
   </div>
   </div>
   <div class="form-group">        
     <div class="col-sm-offset-2 col-sm-10" >
-      <button type="submit" class="btn btn-default" style = "background : #007bff">Submit</button>
+      <button required="" type="submit" class="btn btn-default" style = "background : #007bff">Submit</button>
     </div>
   </div>
 </form>
@@ -300,25 +300,25 @@ elseif(isset($_GET['action7'])){
   <div class="form-group">
      <label class="control-label col-sm-2" for="email">Name :</label>
      <div class="col-sm-10">
-        <input type="text" class="form-control" id="email" name="ten">
+        <input required="" type="text" class="form-control" id="email" name="ten">
      </div>
   </div>
   <div class="form-group">
      <label class="control-label col-sm-2" for="email">Avatar :</label>
      <div class="col-sm-10">
-        <input type="file" name ="anh">
+        <input required="" type="file" name ="anh">
      </div>
   </div>
   <div class="form-group">
      <label class="control-label col-sm-2" for="email">Position :</label>
      <div class="col-sm-10">
-        <input type="text" class="form-control" id="email" name="chucvu">
+        <input required="" type="text" class="form-control" id="email" name="chucvu">
      </div>
   </div>
   <div class="form-group">
      <label class="control-label col-sm-2" for="email">Introduction :</label>
      <div class="col-sm-10">
-        <input type="text" class="form-control" id="email" name="mota">
+        <input required="" type="text" class="form-control" id="email" name="mota">
      </div>
   </div>
   </div>
@@ -356,19 +356,19 @@ elseif(isset($_GET['action5'])) {
   <div class="form-group">
      <label class="control-label col-sm-2" for="email">Name :</label>
      <div class="col-sm-10">
-        <input type="text" class="form-control" id="email" name="2">
+        <input required="" type="text" class="form-control" id="email" name="2">
      </div>
   </div>
   <div class="form-group">
      <label class="control-label col-sm-2" for="email">%  Complate :</label>
      <div class="col-sm-10">
-        <input type="text" class="form-control" id="email" name="3">
+        <input required="" type="text" class="form-control" id="email" name="3">
      </div>
   </div>
   <div class="form-group">
      <label class="control-label col-sm-2" for="email">ID SKILL :</label>
      <div class="col-sm-10">
-        <input type="text" class="form-control" id="email" name="skill">
+        <input required="" type="text" class="form-control" id="email" name="skill">
      </div>
   </div>
   </div>

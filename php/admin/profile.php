@@ -1,7 +1,7 @@
 <?php session_start();?>
 <?php
 if(isset($_GET['action'])){
-    if(!isset($_POST['filename'])) {
+    if(!isset($_FILES['avatar'])) {
         include 'ketnoi.php';
         $sql = "UPDATE `user` SET `name`='".$_POST['name']."',`email`='".$_POST['email']."',`address`='".$_POST['address']."',`phone`='".$_POST['phone']."',`Date of birth`='".$_POST['Dateofbirth']."',`linkface`='".$_POST['linkface']."',`link dribbble`='".$_POST['linkdrbbble']."',`link flickr`='".$_POST['linkflickr']."',`link github`='".$_POST['linkgithub']."' WHERE iduser = '".$_POST['iduser']."'";
         $result = mysqli_query($conn,$sql);
@@ -12,13 +12,13 @@ if(isset($_GET['action'])){
     $sql = "UPDATE `user` SET `name`='".$_POST['name']."',`email`='".$_POST['email']."',`address`='".$_POST['address']."',`phone`='".$_POST['phone']."',`Date of birth`='".$_POST['Dateofbirth']."',`linkface`='".$_POST['linkface']."',`link dribbble`='".$_POST['linkdrbbble']."',`link flickr`='".$_POST['linkflickr']."',`link github`='".$_POST['linkgithub']."',`avatar`='".$a."' WHERE iduser = '".$_POST['iduser']."'";
     $result = mysqli_query($conn,$sql);
     header('location:profile.php');}
-}else{
-require 'ketnoi.php';
-$sql = "SELECT * from user where email='". $_SESSION['email']."'";
-$result = mysqli_query($conn,$sql);
-$row = $result->fetch_assoc();
-mysqli_close($conn);
-if(!empty($row)){
+    }else{
+    require 'ketnoi.php';
+    $sql = "SELECT * from user where email='". $_SESSION['email']."'";
+    $result = mysqli_query($conn,$sql);
+    $row = $result->fetch_assoc();
+    mysqli_close($conn);
+    if(!empty($row)){
 ?>
 
 <!doctype html>

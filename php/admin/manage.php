@@ -136,10 +136,13 @@ elseif($_GET['action'] == 'project'){
         }
         // Tìm Start
         $start = ($current_page - 1) * $limit;
-
+        if(isset($_GET['action'])&& isset($_GET['search'])){
+            $sql = "SELECT * from duan where maduan ='".$_POST['haha']."' LIMIT $start, $limit";
+            $result = mysqli_query($conn,$sql);
+        }else{
         // Có limit và start rồi thì truy vấn CSDL lấy danh sách tin tức
         $sql = "SELECT * from duan LIMIT $start, $limit";
-        $result = mysqli_query($conn,$sql);
+        $result = mysqli_query($conn,$sql);}
     require 'index2.php';
     require 'ketnoi.php';
 ?>
@@ -225,10 +228,13 @@ elseif($_GET['action'] == 'experience'){
             }
             // Tìm Start
             $start = ($current_page - 1) * $limit;
-    
+            if(isset($_GET['action'])&& isset($_GET['search'])){
+                $sql = "SELECT * from kinhnghiem where makinhnghiem ='".$_POST['haha']."' LIMIT $start, $limit";
+                $result = mysqli_query($conn,$sql);
+            }else{
             // Có limit và start rồi thì truy vấn CSDL lấy danh sách tin tức
             $sql = "SELECT * from kinhnghiem LIMIT $start, $limit";
-            $result = mysqli_query($conn,$sql);
+            $result = mysqli_query($conn,$sql);}
     require 'index2.php'; ?>
       <div style ="display: flex;flex-direction: column; align-items: center;">
   <div style = "margin-top : 3%;margin-bottom:3%"><H1>Experience Management</H1></div>
@@ -316,10 +322,13 @@ elseif($_GET['action'] == 'education'){
             }
             // Tìm Start
             $start = ($current_page - 1) * $limit;
-    
+            if(isset($_GET['action'])&& isset($_GET['search'])){
+                $sql = "SELECT * from hoctap where mahoctap ='".$_POST['haha']."' LIMIT $start, $limit";
+                $result = mysqli_query($conn,$sql);
+            }else{
             // Có limit và start rồi thì truy vấn CSDL lấy danh sách tin tức
             $sql = "SELECT * from hoctap LIMIT $start, $limit";
-            $result = mysqli_query($conn,$sql);
+            $result = mysqli_query($conn,$sql);}
     require 'index2.php';
 ?>
       <div style ="display: flex;flex-direction: column; align-items: center;">
@@ -434,10 +443,13 @@ elseif($_GET['action'] == 'contact'){
             }
             // Tìm Start
             $start = ($current_page - 1) * $limit;
-    
+            if(isset($_GET['action'])&& isset($_GET['search'])){
+                $sql = "SELECT * from lienhe where manguoidung ='".$_POST['haha']."' LIMIT $start, $limit";
+                $result = mysqli_query($conn,$sql);
+            }else{
             // Có limit và start rồi thì truy vấn CSDL lấy danh sách tin tức
             $sql = "SELECT * from lienhe LIMIT $start, $limit";
-            $result = mysqli_query($conn,$sql);
+            $result = mysqli_query($conn,$sql);}
             $a = 0;
             $b = 0;
     require 'index2.php';?>
@@ -554,10 +566,13 @@ elseif($_GET['action'] == 'language'){
             }
             // Tìm Start
             $start = ($current_page - 1) * $limit;
-    
+            if(isset($_GET['action'])&& isset($_GET['search'])){
+                $sql = "SELECT * from ngonngu where mangonngu ='".$_POST['haha']."' LIMIT $start, $limit";
+                $result = mysqli_query($conn,$sql);
+            }else{
             // Có limit và start rồi thì truy vấn CSDL lấy danh sách tin tức
             $sql = "SELECT * from ngonngu LIMIT $start, $limit";
-            $result = mysqli_query($conn,$sql);
+            $result = mysqli_query($conn,$sql);}
     require 'index2.php';
 ?>
       <div style ="display: flex;flex-direction: column; align-items: center;">
@@ -639,10 +654,13 @@ elseif($_GET['action'] == 'skill'){
             }
             // Tìm Start
             $start = ($current_page - 1) * $limit;
-    
+            if(isset($_GET['action'])&& isset($_GET['search'])){
+                $sql = "SELECT * from kynang where makynang ='".$_POST['haha']."' LIMIT $start, $limit";
+                $result = mysqli_query($conn,$sql);
+            }else{
             // Có limit và start rồi thì truy vấn CSDL lấy danh sách tin tức
             $sql = "SELECT * from kynang LIMIT $start, $limit";
-            $result = mysqli_query($conn,$sql);
+            $result = mysqli_query($conn,$sql);}
     require 'index2.php'; ?>
 
       <div style ="display: flex;flex-direction: column; align-items: center;">
@@ -725,10 +743,13 @@ else{
             }
             // Tìm Start
             $start = ($current_page - 1) * $limit;
-    
+            if(isset($_GET['action'])&& isset($_GET['search'])){
+                $sql = "SELECT * from nguoigioithieu where manguoigioithieu ='".$_POST['haha']."' LIMIT $start, $limit";
+                $result = mysqli_query($conn,$sql);
+            }else{
             // Có limit và start rồi thì truy vấn CSDL lấy danh sách tin tức
             $sql = "SELECT * from nguoigioithieu LIMIT $start, $limit";
-            $result = mysqli_query($conn,$sql);
+            $result = mysqli_query($conn,$sql);}
     require 'index2.php';?>
       <div style ="display: flex;flex-direction: column; align-items: center;">
   <div style = "margin-top : 3%;margin-bottom:3%"><H1>Presenter</H1></div>
